@@ -14,19 +14,19 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "ガバイソン表彰",
-    description: "優れた成果を上げたことによる表彰。プロジェクトでの貢献が評価されました。",
+    title: "ハッカソン表彰",
+    description: "アプリ開発コンテスト(ハッカソン)で、7チームのうち、参加者投票の過半数を獲得。google mapを用いて現在位置を取得し、ウォーキングルートを提案するWebアプリを開発しました。また、AIを用いてユーザーの要望に沿ったルートを提案する機能も実装しました。",
     icon: <Award className="h-10 w-10" />,
   },
   {
-    title: "部長",
-    description: "大学での部活動の部長を務め、チームをリードしました。メンバーの成長と成果に貢献しました。",
+    title: "大学部活動の部長",
+    description: "大学の部活動(写真部)で部長を務め、部員98名をまとめています。部員が活発に活動できるよう、イベントの企画や運営を行い、部の活性化に貢献しています。近隣企業とのコラボイベントを企画し、地域貢献にも取り組んでいます。(造船所での撮影会→写真展開催など)",
     icon: <Users className="h-10 w-10" />,
   },
   {
     title: "生徒会長",
     description:
-      "高校で生徒会長を務め、学校全体の活動や行事の企画・運営を行いました。リーダーシップを発揮し、多くの改革を実現しました。",
+      "高校で生徒会長を務め、学校全体の活動や行事の企画・運営を行いました。特に，数十年ぶりに文化祭を復活させました。生徒の意見を尊重し、先生方との調整をして学校の活性化に貢献しました。生徒会活動を通じて、リーダーシップやコミュニケーション能力を磨きました。",
     icon: <Crown className="h-10 w-10" />,
   },
 ]
@@ -69,9 +69,8 @@ export default function ProjectsSection() {
           {projects.map((project, index) => (
             <div
               key={project.title}
-              className={`transition-all duration-700 ease-out ${
-                visibleProjects[index] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-              }`}
+              className={`transition-all duration-700 ease-out ${visibleProjects[index] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                }`}
             >
               <Card className="overflow-hidden h-full hover:shadow-lg transition-shadow duration-300">
                 <CardHeader className="pb-3">
