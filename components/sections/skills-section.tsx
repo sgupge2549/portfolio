@@ -14,17 +14,17 @@ interface Skill {
 const skills: Skill[] = [
   {
     name: "HTML",
-    level: 90,
+    level: 80,
     icon: <Code2 className="h-6 w-6" />,
   },
   {
     name: "CSS",
-    level: 85,
+    level: 75,
     icon: <FileJson className="h-6 w-6" />,
   },
   {
     name: "JavaScript",
-    level: 80,
+    level: 40,
     icon: <Braces className="h-6 w-6" />,
   },
   {
@@ -34,7 +34,7 @@ const skills: Skill[] = [
   },
   {
     name: "Java",
-    level: 70,
+    level: 60,
     icon: <Coffee className="h-6 w-6" />,
   },
   {
@@ -49,7 +49,7 @@ const skills: Skill[] = [
   },
   {
     name: "Docker",
-    level: 65,
+    level: 50,
     icon: <Container className="h-6 w-6" />,
   },
 ]
