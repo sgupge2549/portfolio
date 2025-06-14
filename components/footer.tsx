@@ -30,7 +30,7 @@ export default function Footer() {
         </div>
 
         <div className="text-center text-sm text-gray-500">
-          <p>© {currentYear} あなたの名前 All Rights Reserved.</p>
+          <p>© {currentYear} tomy_tech All Rights Reserved.</p>
         </div>
       </div>
     </footer>

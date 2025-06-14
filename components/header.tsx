@@ -77,7 +77,7 @@ export default function Header() {
                 className="object-cover"
               />
             </div>
-            <span>あなたの名前</span>
+            <span>tomy_tech</span>
           </a>
 
           {/* デスクトップナビゲーション */}
