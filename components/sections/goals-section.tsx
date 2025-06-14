@@ -14,12 +14,12 @@ interface Goal {
 const goals: Goal[] = [
   {
     title: "起業",
-    description: "AIを活用したtoCサービスを開発し、多くの人々の生活を便利にするサービスを提供します。",
+    description: "AIを活用したBtoCサービスを開発し、日常の「めんどくさい」を便利にするサービスの提供を目指します。",
     icon: <Rocket className="h-8 w-8" />,
   },
   {
-    title: "自動化ツールの活用",
-    description: "日常業務の効率化を図るため、様々な自動化ツールを開発・活用し、生産性の向上を目指します。",
+    title: "自動化ツールの開発",
+    description: "デジタルやAIを活用した自動化ツールを開発し、業務効率化やBtoBコンテンツの提供を視野に入れています。",
     icon: <Zap className="h-8 w-8" />,
   },
 ]
@@ -69,9 +69,8 @@ export default function GoalsSection() {
           {goals.map((goal, index) => (
             <div
               key={goal.title}
-              className={`flex gap-6 mb-10 last:mb-0 transition-all duration-500 ${
-                isIntersecting ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
-              }`}
+              className={`flex gap-6 mb-10 last:mb-0 transition-all duration-500 ${isIntersecting ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
+                }`}
               style={{ transitionDelay: `${500 + index * 200}ms` }}
               onMouseEnter={() => handleMouseEnter(index)}
               onMouseLeave={handleMouseLeave}
