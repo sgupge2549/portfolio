@@ -19,31 +19,31 @@ export default function ContactSection() {
 
             <div className="space-y-4">
               <a
-                href="mailto:your.email@university.ac.jp"
+                href="mailto:23238286@edu.cc.saga-u.ac.jp"
                 className="flex items-center space-x-3 p-4 border rounded-lg hover:bg-gray-50 transition-colors"
               >
                 <Mail className="h-6 w-6 text-primary" />
-                <span>your.email@university.ac.jp</span>
+                <span>23238286@edu.cc.saga-u.ac.jp</span>
               </a>
 
               <a
-                href="https://instagram.com/yourusername"
+                href="https://instagram.com/tomy_tech626"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center space-x-3 p-4 border rounded-lg hover:bg-gray-50 transition-colors"
               >
                 <Instagram className="h-6 w-6 text-primary" />
-                <span>@yourusername</span>
+                <span>@tomy_tech626</span>
               </a>
 
               <a
-                href="https://github.com/yourusername"
+                href="https://github.com/sgupge2549"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center space-x-3 p-4 border rounded-lg hover:bg-gray-50 transition-colors"
               >
                 <Github className="h-6 w-6 text-primary" />
-                <span>@yourusername</span>
+                <span>@sgupge2549</span>
               </a>
             </div>
           </div>
