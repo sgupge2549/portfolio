@@ -90,7 +90,7 @@ export default function ContactSection() {
 
             <form onSubmit={handleSubmit} className="space-y-4">
               {/* Web3Forms用の隠しフィールド */}
-              <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+              <input type="hidden" name="access_key" value="0adf00f3-ec07-4883-b1af-cb2a39bfafd7" />
               <input type="hidden" name="subject" value="ポートフォリオサイトからのお問い合わせ" />
               <input type="hidden" name="from_name" value="ポートフォリオサイト" />
 
