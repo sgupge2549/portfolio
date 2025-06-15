@@ -62,7 +62,7 @@ export default function Header() {
     <header
       className={cn(
         "fixed top-0 w-full z-50 transition-all duration-300",
-        isScrolled ? "bg-white/90 backdrop-blur-sm shadow-sm" : "bg-transparent",
+        isScrolled ? "bg-slate-800/90 backdrop-blur-sm shadow-sm" : "bg-transparent",
       )}
     >
       <div className="container mx-auto px-4">
@@ -103,7 +103,7 @@ export default function Header() {
 
       {/* モバイルナビゲーション */}
       {mobileMenuOpen && (
-        <nav className="md:hidden bg-white border-t">
+        <nav className="md:hidden bg-slate-800 border-t">
           <div className="container mx-auto px-4 py-3 space-y-3">
             {navItems.map((item) => (
               <a
