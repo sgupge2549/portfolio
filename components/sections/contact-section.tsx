@@ -1,9 +1,45 @@
-import { Mail, Instagram, Github } from "lucide-react"
+"use client"
+
+import type React from "react"
+
+import { useState } from "react"
+import { Mail, Instagram, Github, CheckCircle, AlertCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 
 export default function ContactSection() {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    setSubmitStatus("idle")
+
+    const formData = new FormData(e.currentTarget)
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      })
+
+      if (response.ok) {
+        setSubmitStatus("success")
+        // フォームをリセット
+        e.currentTarget.reset()
+      } else {
+        setSubmitStatus("error")
+      }
+    } catch (error) {
+      console.error("Form submission error:", error)
+      setSubmitStatus("error")
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
   return (
     <section id="contact" className="section-padding">
       <div className="container mx-auto px-4">
@@ -52,31 +88,72 @@ export default function ContactSection() {
           <div>
             <h3 className="section-subtitle">メッセージを送る</h3>
 
-            <form className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4">
+              {/* Web3Forms用の隠しフィールド */}
+              <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+              <input type="hidden" name="subject" value="ポートフォリオサイトからのお問い合わせ" />
+              <input type="hidden" name="from_name" value="ポートフォリオサイト" />
+
               <div>
                 <label htmlFor="name" className="block text-sm font-medium mb-1">
-                  お名前
+                  お名前 <span className="text-red-500">*</span>
                 </label>
-                <Input id="name" type="text" placeholder="山田 太郎" required />
+                <Input
+                  id="name"
+                  name="name"
+                  type="text"
+                  placeholder="山田 太郎"
+                  required
+                  disabled={isSubmitting}
+                />
               </div>
 
               <div>
                 <label htmlFor="email" className="block text-sm font-medium mb-1">
-                  メールアドレス
+                  メールアドレス <span className="text-red-500">*</span>
                 </label>
-                <Input id="email" type="email" placeholder="example@email.com" required />
+                <Input
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="example@email.com"
+                  required
+                  disabled={isSubmitting}
+                />
               </div>
 
               <div>
                 <label htmlFor="message" className="block text-sm font-medium mb-1">
-                  メッセージ
+                  メッセージ <span className="text-red-500">*</span>
                 </label>
-                <Textarea id="message" placeholder="メッセージを入力してください" rows={5} required />
+                <Textarea
+                  id="message"
+                  name="message"
+                  placeholder="メッセージを入力してください"
+                  rows={5}
+                  required
+                  disabled={isSubmitting}
+                />
               </div>
 
-              <Button type="submit" className="w-full">
-                送信する
+              <Button type="submit" className="w-full" disabled={isSubmitting}>
+                {isSubmitting ? "送信中..." : "送信する"}
               </Button>
+
+              {/* 送信結果の表示 */}
+              {submitStatus === "success" && (
+                <div className="flex items-center space-x-2 text-green-600 bg-green-50 p-3 rounded-md">
+                  <CheckCircle className="h-5 w-5" />
+                  <span>メッセージが正常に送信されました。ありがとうございます！</span>
+                </div>
+              )}
+
+              {submitStatus === "error" && (
+                <div className="flex items-center space-x-2 text-red-600 bg-red-50 p-3 rounded-md">
+                  <AlertCircle className="h-5 w-5" />
+                  <span>送信に失敗しました。しばらく時間をおいて再度お試しください。</span>
+                </div>
+              )}
             </form>
           </div>
         </div>
