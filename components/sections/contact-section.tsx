@@ -27,6 +27,7 @@ export default function ContactSection() {
 
       if (response.ok) {
         setSubmitStatus("success")
+        console.log("Current target for reset:", e.currentTarget) // デバッグ用ログ
         // フォームをリセット
         e.currentTarget.reset()
       } else {
