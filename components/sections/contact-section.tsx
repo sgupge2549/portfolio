@@ -2,7 +2,7 @@
 
 import type React from "react"
 
-import { useState } from "react"
+import { useState, useRef } from "react" // useRef をインポート
 import { Mail, Instagram, Github, CheckCircle, AlertCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -11,6 +11,7 @@ import { Textarea } from "@/components/ui/textarea"
 export default function ContactSection() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
+  const formRef = useRef<HTMLFormElement>(null) // form 要素への参照を保持する useRef を作成
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -27,9 +28,11 @@ export default function ContactSection() {
 
       if (response.ok) {
         setSubmitStatus("success")
-        console.log("Current target for reset:", e.currentTarget) // デバッグ用ログ
         // フォームをリセット
-        e.currentTarget.reset()
+        // useRef を使用してフォームをリセット
+        if (formRef.current) { // formRef.current が null でないことを確認
+          formRef.current.reset()
+        }
       } else {
         setSubmitStatus("error")
       }
@@ -87,9 +90,10 @@ export default function ContactSection() {
 
           {/* コンタクトフォーム */}
           <div>
-            <h3 className="section-subtitle">メッセージを送る(現在不安定，調整中です)</h3>
+            <h3 className="section-subtitle">メッセージを送る</h3>
 
-            <form onSubmit={handleSubmit} className="space-y-4">
+            {/* formRef を form 要素にアタッチ */}
+            <form onSubmit={handleSubmit} ref={formRef} className="space-y-4">
               {/* Web3Forms用の隠しフィールド */}
               <input type="hidden" name="access_key" value="0adf00f3-ec07-4883-b1af-cb2a39bfafd7" />
               <input type="hidden" name="subject" value="ポートフォリオサイトからのお問い合わせ" />
