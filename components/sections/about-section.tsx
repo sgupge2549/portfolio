@@ -11,7 +11,7 @@ const carouselImages = [
     alt: "スライド1",
   },
   {
-    src: "/images/img_slide(2).jpg?height=800&width=1200&text=Slide 2",
+    src: "/images/img_slide(2).JPG?height=800&width=1200&text=Slide 2",
     alt: "スライド2",
   },
   {
