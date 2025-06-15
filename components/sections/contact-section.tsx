@@ -86,7 +86,7 @@ export default function ContactSection() {
 
           {/* コンタクトフォーム */}
           <div>
-            <h3 className="section-subtitle">メッセージを送る</h3>
+            <h3 className="section-subtitle">メッセージを送る(現在不安定，調整中です)</h3>
 
             <form onSubmit={handleSubmit} className="space-y-4">
               {/* Web3Forms用の隠しフィールド */}
