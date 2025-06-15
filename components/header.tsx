@@ -70,7 +70,7 @@ export default function Header() {
           <a href="#" className="flex items-center space-x-2 text-xl font-bold">
             <div className="relative w-8 h-8 rounded-full overflow-hidden">
               <Image
-                src="/placeholder.svg?height=32&width=32"
+                src="/images/icon.png?height=32&width=32"
                 alt="プロフィールアイコン"
                 width={32}
                 height={32}
