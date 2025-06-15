@@ -7,19 +7,16 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 // 異なる色のダミー画像を用意
 const carouselImages = [
   {
-    src: "/placeholder.svg?height=800&width=1200&text=Slide 1",
+    src: "/images/img_slide(1).jpg?height=800&width=1200&text=Slide 1",
     alt: "スライド1",
-    bgColor: "bg-blue-500/40",
   },
   {
-    src: "/placeholder.svg?height=800&width=1200&text=Slide 2",
+    src: "/images/img_slide(2).jpg?height=800&width=1200&text=Slide 2",
     alt: "スライド2",
-    bgColor: "bg-green-500/40",
   },
   {
-    src: "/placeholder.svg?height=800&width=1200&text=Slide 3",
+    src: "/images/img_slide(3).jpg?height=800&width=1200&text=Slide 3",
     alt: "スライド3",
-    bgColor: "bg-purple-500/40",
   },
 ]
 
@@ -57,9 +54,8 @@ export default function AboutSection() {
               {carouselImages.map((image, index) => (
                 <div
                   key={index}
-                  className={`absolute inset-0 transition-opacity duration-1000 ${
-                    index === currentImage ? "opacity-100" : "opacity-0"
-                  }`}
+                  className={`absolute inset-0 transition-opacity duration-1000 ${index === currentImage ? "opacity-100" : "opacity-0"
+                    }`}
                 >
                   <Image
                     src={image.src || "/placeholder.svg"}
@@ -95,9 +91,8 @@ export default function AboutSection() {
                   <button
                     key={index}
                     onClick={() => setCurrentImage(index)}
-                    className={`h-3 w-3 rounded-full transition-all duration-300 ${
-                      index === currentImage ? "bg-white scale-125" : "bg-white/50"
-                    }`}
+                    className={`h-3 w-3 rounded-full transition-all duration-300 ${index === currentImage ? "bg-white scale-125" : "bg-white/50"
+                      }`}
                     aria-label={`スライド ${index + 1} に移動`}
                   />
                 ))}
@@ -108,26 +103,29 @@ export default function AboutSection() {
           {/* テキストコンテンツ部分 */}
           <div className="lg:w-1/2">
             <p className="text-base md:text-lg mb-6 leading-relaxed">
-              ここに自己紹介文を入れてください。あなたの個性や専門性を表すような短い文章を書きましょう。
-              読者があなたについて知りたいと思うような、魅力的な内容にしましょう。
+              ご訪問ありがとうございます。tomyと申します。大学で情報工学を専攻しており、プログラミング・写真撮影・ドライブが趣味です。よろしくお願いします。
             </p>
 
             <div className="space-y-4 md:space-y-5 lg:space-y-4 xl:space-y-5">
               <div className="p-3 md:p-4 bg-primary/10 rounded-lg border border-primary/20">
                 <h3 className="text-lg md:text-xl font-bold text-primary mb-1">Challenging manager</h3>
-                <p className="text-sm md:text-base">常に新しい挑戦を求め、チームをリードする情熱を持っています。</p>
+                <p className="text-sm md:text-base">
+                  常に新たな挑戦を求め、メンバーとコミュニケーションを取りながらチームをリードします。
+                </p>
               </div>
 
               <div className="p-3 md:p-4 bg-primary/10 rounded-lg border border-primary/20">
                 <h3 className="text-lg md:text-xl font-bold text-primary mb-1">Developing programmer</h3>
                 <p className="text-sm md:text-base">
-                  日々スキルを磨き、革新的なソリューションを生み出すプログラマーです。
+                  日々スキルを磨き、新しい技術を学び活用しながら、成長を続けるプログラマーです。
                 </p>
               </div>
 
               <div className="p-3 md:p-4 bg-primary/10 rounded-lg border border-primary/20">
                 <h3 className="text-lg md:text-xl font-bold text-primary mb-1">Emerging photographer</h3>
-                <p className="text-sm md:text-base">独自の視点で世界を切り取り、感動を伝える写真を撮影しています。</p>
+                <p className="text-sm md:text-base">
+                  多方向から世界を切り取り、被写体の魅力を引き出します。写真を通じて新たな視点をお届けします。
+                </p>
               </div>
             </div>
           </div>
