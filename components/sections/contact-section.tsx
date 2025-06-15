@@ -19,11 +19,11 @@ export default function ContactSection() {
 
             <div className="space-y-4">
               <a
-                href="mailto:23238286@edu.cc.saga-u.ac.jp"
+                href="mailto:tomytech626@gmail.com"
                 className="flex items-center space-x-3 p-4 border rounded-lg hover:bg-gray-50 transition-colors"
               >
                 <Mail className="h-6 w-6 text-primary" />
-                <span>23238286@edu.cc.saga-u.ac.jp</span>
+                <span>tomytech626@gmail.com</span>
               </a>
 
               <a
