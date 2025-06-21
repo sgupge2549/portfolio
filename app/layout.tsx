@@ -8,7 +8,10 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "portfolio | tomy_tech",
   description: "tomy_techのポートフォリオサイト",
-  generator: 'v0.dev'
+  generator: 'v0.dev',
+  icons: {//ファビコン
+    icon: '\images\icon.png',
+  }
 }
 
 export default function RootLayout({
