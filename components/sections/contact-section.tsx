@@ -55,6 +55,8 @@ export default function ContactSection() {
             <h3 className="section-subtitle">お問い合わせ</h3>
             <p className="mb-6 text-gray-700">
               お問い合わせやご質問がありましたら、以下の連絡先までご連絡ください。
+              <br />
+              また、githubのリポジトリにて、コードを公開していますので、ぜひご覧ください。
             </p>
 
             <div className="space-y-4">
