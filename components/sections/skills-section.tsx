@@ -34,7 +34,7 @@ const skills: Skill[] = [
   },
   {
     name: "Java",
-    level: 60,
+    level: 45,
     icon: <Coffee className="h-6 w-6" />,
   },
   {
